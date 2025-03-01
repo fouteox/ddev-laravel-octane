@@ -1,3 +1,4 @@
+#ddev-generated
 {
 	{$CADDY_GLOBAL_OPTIONS}
 
@@ -9,7 +10,7 @@
 }
 
 :8000 {
-    log {
+	log {
 		level {$CADDY_SERVER_LOG_LEVEL}
 
 		# Redact the authorization query parameter that can be set by Mercure...
@@ -31,7 +32,7 @@
 		{$CADDY_SERVER_EXTRA_DIRECTIVES}
 
 		php_server {
-            env HTTPS "on"
+			env HTTPS "on"
 			index frankenphp-worker.php
 			try_files {path} frankenphp-worker.php
 			# Required for the public/storage/ directory...
