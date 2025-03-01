@@ -9,4 +9,3 @@ post_install_actions:
   - ddev exec composer require laravel/octane
   - ddev artisan octane:install --server=frankenphp --no-interaction
   - ddev exec 'if [ "${JAVASCRIPT_PACKAGE_MANAGER}" = "bun" ]; then bun add -d chokidar; else npm install chokidar --save-dev; fi'
-  - ddev restart
