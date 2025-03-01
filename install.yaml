@@ -2,7 +2,7 @@ name: laravel-octane
 
 project_files:
   - config.frankenphp.yaml
-  - caddy/
+  - Caddyfile
   - web-build/Dockerfile.frankenphp
 
 post_install_actions:
