@@ -4,8 +4,10 @@ project_files:
   - config.frankenphp.yaml
   - Caddyfile
   - web-build/Dockerfile.frankenphp
+  - octane/
 
 post_install_actions:
   - ddev exec composer require laravel/octane
   - ddev artisan octane:install --server=frankenphp --no-interaction
   - ddev exec 'if [ "${JAVASCRIPT_PACKAGE_MANAGER}" = "bun" ]; then bun add -d chokidar; else npm install chokidar --save-dev; fi'
+  - docker run --rm -v ${DDEV_APPROOT}:/app python:3-alpine python /app/.ddev/octane/env_config_updater.py
